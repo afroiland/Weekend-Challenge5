@@ -8,15 +8,17 @@
     <th>Employee ID</th>
     <th>Job Title</th>
     <th>Annual Salary</th>
+    <th>Status</th>
   </tr>
-  <!-- <tr ng-repeat="warehouseData in warehouse.warehouses | filter:{description:itemSearch}">
-    <td>{{warehouseData.warehouse}}</td>
-    <td>{{warehouseData.fulfillment_days}}</td>
-    <td>{{warehouseData.warehouse}}</td>
-    <td>{{warehouseData.warehouse}}</td>
-    <td>{{warehouseData.warehouse}}</td>
-    <td ng-hide="true">{{warehouseData.description}}</td>
-  </tr> -->
+  <tr ng-repeat="employeeData in empcon.empInfo">
+    <td>{{employeeData.first_name}}</td>
+    <td>{{employeeData.last_name}}</td>
+    <td>{{employeeData.emp_id}}</td>
+    <td>{{employeeData.job_title}}</td>
+    <td>{{employeeData.annual_salary}}</td>
+    <td>{{employeeData.status}}</td>
+    <!-- <td ng-hide="true">{{warehouseData.description}}</td> -->
+  </tr>
 </table>
 
 </div>

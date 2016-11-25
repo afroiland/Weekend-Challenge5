@@ -21,5 +21,20 @@ app.config(['$routeProvider', function($routeProvider) {
       redirectTo: 'home'
     });
 
-
 }]);
+
+app.controller('EmployeeController', ["$http", function($http) {
+  console.log('employee controller is running');
+  var self = this;
+  self.empInfo = [];
+
+  getEmpInfo();
+
+  function getEmpInfo() {
+    //$.ajax
+    $http.get('/employees')
+      .then(function(response) {
+        self.empInfo = response.data;
+      });
+  } // end getWarehouses function
+}]); //end app.controller
