@@ -1,24 +1,58 @@
-<div ng-controller="EmployeeController" class="container">
+<div ng-controller="EmployeeController as employeeController" class="container">
 
-<h2>Employees</h2>
-<table id="employeeTable" class="table">
-  <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Employee ID</th>
-    <th>Job Title</th>
-    <th>Annual Salary</th>
-    <th>Status</th>
-  </tr>
-  <tr ng-repeat="employeeData in empcon.empInfo">
-    <td>{{employeeData.first_name}}</td>
-    <td>{{employeeData.last_name}}</td>
-    <td>{{employeeData.emp_id}}</td>
-    <td>{{employeeData.job_title}}</td>
-    <td>{{employeeData.annual_salary}}</td>
-    <td>{{employeeData.status}}</td>
-    <!-- <td ng-hide="true">{{warehouseData.description}}</td> -->
-  </tr>
-</table>
+  <form id="employee-form">
+    <div class="form-group">
+      <label for="first_name">First Name:</label>
+      <input type="text" ng-model="employeeController.newEmployee.first_name" name="first_name" class="form-control" />
+    </div>
 
+    <div class="form-group">
+      <label for="lasst_name">Last Name:</label>
+      <input type="text" ng-model="employeeController.newEmployee.last_name" name="last_name" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="first_name">Employee ID:</label>
+      <input type="text" ng-model="employeeController.newEmployee.emp_id" name="emp_id" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="job_title">Job Title:</label>
+      <input type="text" ng-model="employeeController.newEmployee.job_title" name="job_title" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="annual_salary">Annual Salary:</label>
+      <input type="text" ng-model="employeeController.newEmployee.annual_salary" name="annual_salary" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status:</label>
+      <input type="text" ng-model="employeeController.newEmployee.status" name="status" class="form-control" />
+    </div>
+
+    <button class="btn btn-default" ng-click="employeeController.addEmployee()">Add Employee</button>
+  </form>
+
+
+  <h2>Employees</h2>
+  <table id="employeeTable" class="table">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Employee ID</th>
+      <th>Job Title</th>
+      <th>Annual Salary</th>
+      <th>Status</th>
+    </tr>
+    <tr ng-repeat="employeeData in empcon.empInfo">
+      <td>{{employeeData.first_name}}</td>
+      <td>{{employeeData.last_name}}</td>
+      <td>{{employeeData.emp_id}}</td>
+      <td>{{employeeData.job_title}}</td>
+      <td>{{employeeData.annual_salary}}</td>
+      <td>{{employeeData.status}}</td>
+      <!-- <td ng-hide="true">{{warehouseData.description}}</td> -->
+    </tr>
+  </table>
 </div>
