@@ -29,6 +29,8 @@ app.controller('EmployeeController', ["$http", function($http) {
   self.empInfo = [];
   self.newEmployee = {};
 
+
+
   getEmpInfo();
 
   function getEmpInfo() {
@@ -36,6 +38,11 @@ app.controller('EmployeeController', ["$http", function($http) {
     $http.get('/employees')
       .then(function(response) {
         self.empInfo = response.data;
+        var totalExpenditure = 0;
+        for (var i = 0; i < self.empInfo.length; i++) {
+          totalExpenditure += parseInt(self.empInfo[i].annual_salary);
+        }
+        self.monthlyExpenditure = Math.round(totalExpenditure/12)
       });
   }
 
@@ -45,9 +52,7 @@ app.controller('EmployeeController', ["$http", function($http) {
       .then(function(response) {
         console.log('POST finished. Get empInfo again.');
         getEmpInfo();
-        console.log("test111");
       });
   }
-
 
 }]); //end app.controller
