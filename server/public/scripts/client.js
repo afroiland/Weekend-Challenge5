@@ -38,11 +38,15 @@ app.controller('EmployeeController', ["$http", function($http) {
     $http.get('/employees')
       .then(function(response) {
         self.empInfo = response.data;
+        console.log('self.empInfo: ', self.empInfo);
         var totalExpenditure = 0;
         for (var i = 0; i < self.empInfo.length; i++) {
-          totalExpenditure += parseInt(self.empInfo[i].annual_salary);
+          console.log('self.empInfo.active: ', self.empInfo.active);
+          if(self.empInfo[i].active == true){
+            totalExpenditure += parseInt(self.empInfo[i].annual_salary);
+          }
+        self.monthlyExpenditure = Math.round(totalExpenditure/12);
         }
-        self.monthlyExpenditure = Math.round(totalExpenditure/12)
       });
   }
 
