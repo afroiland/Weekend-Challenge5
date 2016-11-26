@@ -32,7 +32,7 @@ router.post('/', function(req, res) {
     client.query(
       'INSERT INTO employees (first_name, last_name, emp_id, job_title, annual_salary, status) ' +
       'VALUES ($1, $2, $3, $4, $5, $6)',
-      [newEmployee.first_name, newEmployee.last_name, newEmployee.emp_id, newEmployee.job_title, newEmployee.annual_salary, newEmployee.status],
+      [newEmployee.first_name, newEmployee.last_name, newEmployee.emp_id, newEmployee.job_title, newEmployee.annual_salary, 'Active'],
       function(err, result) {
         done();
         if(err) {
