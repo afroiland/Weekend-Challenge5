@@ -29,8 +29,6 @@ app.controller('EmployeeController', ["$http", function($http) {
   self.empInfo = [];
   self.newEmployee = {};
 
-
-
   getEmpInfo();
 
   function getEmpInfo() {
@@ -51,22 +49,19 @@ app.controller('EmployeeController', ["$http", function($http) {
   }
 
   self.toggleStatus = function(employee) {
-
     console.log('employee: ', employee);
     var id = employee.id;
     if(employee.active == true) {
       employee.active = false;
-    }
-    if(employee.active == false) {
+    }else if(employee.active == false) {
       employee.active = true;
     }
     console.log('employee.active: ', employee.active);
     $http.put('/employees/' + id, employee)
       .then(function(response) {
-        getEmpInfo();
+        // getEmpInfo();
       });
   }
-
 
   self.addEmployee = function() {
     console.log('new employee: ', self.newEmployee);

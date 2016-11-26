@@ -15,9 +15,9 @@ app.use('/salary', salary)
 app.use(express.static(path.resolve('./server/public')));
 
 // server index file
-app.get('/home', function(req, res) {
-    res.send("hello from the server");
-});
+// app.get('/home', function(req, res) {
+//     res.send("hello from the server");
+// });
 
 //catchall
 app.get('/', function(req, res) {
