@@ -18,7 +18,7 @@ app.config(['$routeProvider', function($routeProvider) {
       controllerAs: 'salcon',
     })
     .otherwise({
-      redirectTo: 'home'
+      redirectTo: 'employees'
     });
 
 }]);
@@ -32,7 +32,6 @@ app.controller('EmployeeController', ["$http", function($http) {
   getEmpInfo();
 
   function getEmpInfo() {
-    //$.ajax
     $http.get('/employees')
       .then(function(response) {
         self.empInfo = response.data;
