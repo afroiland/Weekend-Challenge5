@@ -5,7 +5,6 @@ var bodyParser = require('body-parser');
 var employees = require('./routes/employees');
 var salary = require('./routes/salary');
 
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json()); // needed by Angular
 
@@ -26,5 +25,5 @@ app.get('/', function(req, res) {
 });
 
 app.listen(3000, function() {
-  console.log("server running, check localhost:3000");
+  console.log("server running on localhost:3000");
 });

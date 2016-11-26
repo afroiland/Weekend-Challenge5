@@ -12,11 +12,11 @@ app.config(['$routeProvider', function($routeProvider) {
       controller: 'EmployeeController',
       controllerAs: 'empcon',
     })
-    .when('/salary' ,{
-      templateUrl: '/views/templates/salary.html',
-      controller: 'SalaryController',
-      controllerAs: 'salcon',
-    })
+    // .when('/salary' ,{
+    //   templateUrl: '/views/templates/salary.html',
+    //   controller: 'SalaryController',
+    //   controllerAs: 'salcon',
+    // })
     .otherwise({
       redirectTo: 'home'
     });
@@ -36,5 +36,5 @@ app.controller('EmployeeController', ["$http", function($http) {
       .then(function(response) {
         self.empInfo = response.data;
       });
-  } // end getWarehouses function
+  }
 }]); //end app.controller
