@@ -1,4 +1,4 @@
-
+<div ng-controller="EmployeeController as employeeController" class="container">
   <form id="employee-form">
     <div class="form-group">
       <label for="first_name">First Name:</label>
@@ -51,13 +51,12 @@
       <td>{{employeeData.job_title}}</td>
       <td>{{employeeData.annual_salary}}</td>
       <td><label class="switch">
-        <input type="checkbox" checked ng-click="empcon.toggleStatus(employeeData)">
-        <div class="slider round"></div>
+        <input type="checkbox" checked>
+        <div class="slider round" ng-click="empcon.toggleStatus(employeeData)"></div>
       </label></td>
       <!-- <td>{{employeeData.status}}</td> -->
     </tr>
   </table>
+</div>
 
-<!-- <div ng-controller="EmployeeController as employeeController" class="container"> -->
   <p id="totalSalaries" ng-model="employeeController">Total Salary Expenditure: {{empcon.monthlyExpenditure}}</p>
-<!-- </div> -->
