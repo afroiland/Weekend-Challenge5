@@ -1,4 +1,5 @@
 <div ng-controller="EmployeeController as employeeController" class="container">
+
   <form id="employee-form">
     <div class="form-group">
       <label for="first_name">First Name:</label>
@@ -44,7 +45,7 @@
       <th>Annual Salary</th>
       <th>Active Employee</th>
     </tr>
-    <tr ng-repeat="employeeData in empcon.empInfo | orderBy:'emp_id'">
+    <tr ng-repeat="employeeData in empcon.empInfo | orderBy:'id'">
       <td>{{employeeData.first_name}}</td>
       <td>{{employeeData.last_name}}</td>
       <td>{{employeeData.emp_id}}</td>
