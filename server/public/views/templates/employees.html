@@ -44,7 +44,7 @@
       <th>Annual Salary</th>
       <th>Active Employee</th>
     </tr>
-    <tr ng-repeat="employeeData in empcon.empInfo">
+    <tr ng-repeat="employeeData in empcon.empInfo | orderBy:'emp_id'">
       <td>{{employeeData.first_name}}</td>
       <td>{{employeeData.last_name}}</td>
       <td>{{employeeData.emp_id}}</td>
