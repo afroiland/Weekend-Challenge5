@@ -1,4 +1,3 @@
-<div ng-controller="EmployeeController as employeeController" class="container">
 
   <form id="employee-form">
     <div class="form-group">
@@ -59,5 +58,6 @@
     </tr>
   </table>
 
-  <p id="totalSalaries">Total Salary Expenditure: {{employeeController.monthlyExpenditure}}</p>
-</div>
+<!-- <div ng-controller="EmployeeController as employeeController" class="container"> -->
+  <p id="totalSalaries" ng-model="employeeController">Total Salary Expenditure: {{empcon.monthlyExpenditure}}</p>
+<!-- </div> -->

@@ -20,7 +20,6 @@ app.config(['$routeProvider', function($routeProvider) {
     .otherwise({
       redirectTo: 'employees'
     });
-
 }]);
 
 app.controller('EmployeeController', ["$http", function($http) {
@@ -38,10 +37,11 @@ app.controller('EmployeeController', ["$http", function($http) {
         // console.log('self.empInfo: ', self.empInfo);
         var totalExpenditure = 0;
         for (var i = 0; i < self.empInfo.length; i++) {
-          // console.log('self.empInfo[i].active: ', self.empInfo[i].active);
+          console.log('self.empInfo[i].active: ', self.empInfo[i].active);
           if(self.empInfo[i].active == true){
             totalExpenditure += parseInt(self.empInfo[i].annual_salary);
           }
+          // console.log('totalExpenditure: ', totalExpenditure);
         self.monthlyExpenditure = Math.round(totalExpenditure/12);
         }
       });
